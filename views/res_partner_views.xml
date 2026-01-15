@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_inherit_billing_history" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.billing.history</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                 <!-- Option 1: Display as a stat button (non-clickable info) -->
+                <!-- 
+                <button type="object" class="oe_stat_button" icon="fa-usd" readonly="1">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="amount_invoiced_n_minus_1" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                        </span>
+                        <span class="o_stat_text">Billed N-1</span>
+                    </div>
+                </button>
+                -->
+            </xpath>
+            
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="amount_invoiced_n_minus_1" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
