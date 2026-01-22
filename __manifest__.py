@@ -1,6 +1,7 @@
 {
     'name': 'Partner Billing History',
     'version': '1.0',
+    'author': 'Prelium',
     'category': 'Accounting/Accounting',
     'summary': 'Add N-1 billing field to partners',
     'description': """
